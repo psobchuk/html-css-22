@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <form class="js-speaker-form form">
+        <div class="form-field">
+            <input type="text" class="form-input" name="topic" id="name" placeholder=" " autofocus>
+            <label for="name" class="form-label">Name</label>
+            <span class="icon"></span>
+        </div>
+
+        <br>
+        <div class="form-field">
+            <input type="phone" class="form-input" name="topic" id="tel" placeholder=" ">
+            <label for="tel" class="form-label">Telephone</label>
+            <span class="icon"></span>
+        </div>
+
+        <br>
+        <div class="form-field">
+            <input type="email" class="form-input" name="topic" id="mail" autocomplete="on" placeholder=" ">
+            <label for="mail" class="form-label">Mail</label>
+            <span class="icon"></span>
+        </div>
+
+        <div role="group" class="group">
+            <h2 class="group-title">Тема</h2>
+            <ul class="topic-options">
+                <li>
+                    <input type="checkbox" class="form-input" name="topic" value="html" id="html">
+                    <label for="html" class="form-label">HTML</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="form-input" name="topic" value="css" id="css">
+                    <label for="css" class="form-label">CSS</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="form-input" name="topic" value="js" id="js">
+                    <label for="js" class="form-label">JS</label>
+                </li>
+            </ul>
+        </div>
+
+        <div role="group" class="group">
+            <h2 class="group-title">Рівень вашої експертизи</h2>
+            <ul class="experience-options">
+                <li>
+                    <input type="radio" class="form-input" name="experience" value="jun" id="jun">
+                    <label for="jun" class="form-label">Junior</label>
+                </li>
+                <li>
+                    <input type="radio" class="form-input" name="experience" value="mid" id="mid">
+                    <label for="mid" class="form-label">Middle</label>
+                </li>
+                <li>
+                    <input type="radio" class="form-input" name="experience" value="sen" id="sen">
+                    <label for="sen" class="form-label">Senior</label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="form-field">
+            <label for="date" class="form-label">Дата звіту</label>
+            <input type="datetime-local" class="form-input" name="" id="date" class="date">
+        </div>
+
+        <div class="form-field">
+            <label for="pdf" class="form-label">Завантажте копію звіту</label>
+            <input type="file" class="form-input" name="pdf" id="pdf">
+        </div>
+
+        <div class="form-field">
+            <label for="comment" class="form-label">Залиште коментар</label>
+            <textarea name="comment" id="comment" rows="10" placeholder="Уточніть деталі звіту"></textarea>
+        </div>
+
+        <div class="form-field">
+            <input type="checkbox" class="form-input" name="policy" id="policy">
+            <label for="policy" class="form-label">Agree</label>
+        </div>
+
+        <button type="submit">Send a request</button>
+    </form>
+</body>
+<script>
+    (() => {
+        document
+            .querySelector('.js-speaker-form')
+            .addEventListener('submit', e => {
+                e.preventDefault();
+
+                new FormData(e.currentTarget).forEach((value, name) =>
+                    console.log(`${name}: ${value}`),
+                );
+            });
+    })();
+</script>
+
+</html>
